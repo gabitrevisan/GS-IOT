@@ -1,0 +1,192 @@
+[
+    {
+        "id": "e4b579e174c8d6f2",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1deaf74d6a9b6241",
+        "type": "mqtt in",
+        "z": "e4b579e174c8d6f2",
+        "name": "",
+        "topic": "fiap/iot/GS",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "4f2320ab39b1e422",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "9f7c7a62b3105030",
+                "4720e99e4d6e7208"
+            ]
+        ]
+    },
+    {
+        "id": "9a6b14eba96e58ef",
+        "type": "ui_gauge",
+        "z": "e4b579e174c8d6f2",
+        "name": "Botão 1",
+        "group": "81a117f5804f3112",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Botão 1",
+        "label": "Quantidade de pessoas",
+        "format": "",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9f7c7a62b3105030",
+        "type": "change",
+        "z": "e4b579e174c8d6f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.botao1",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "9a6b14eba96e58ef"
+            ]
+        ]
+    },
+    {
+        "id": "4720e99e4d6e7208",
+        "type": "change",
+        "z": "e4b579e174c8d6f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.botao2",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "dced04ec751b4924"
+            ]
+        ]
+    },
+    {
+        "id": "dced04ec751b4924",
+        "type": "ui_gauge",
+        "z": "e4b579e174c8d6f2",
+        "name": "Botão 2",
+        "group": "81a117f5804f3112",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Botão 2",
+        "label": "Quantidade de pessoas",
+        "format": "",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4f2320ab39b1e422",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "81a117f5804f3112",
+        "type": "ui_group",
+        "name": "Home ",
+        "tab": "17b2146e0d641665",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "17b2146e0d641665",
+        "type": "ui_tab",
+        "name": "Home ",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
